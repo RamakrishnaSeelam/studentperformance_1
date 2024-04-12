@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('"C:\Users\91630\Desktop\images.jpg"'); /* Replace 'background.jpg' with your background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.6); /* Adjust transparency as needed */
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Prediction Results</h2>
+        <p><strong>Predicted Performance:</strong></p>
+        {% if best_prediction < 50 %}
+            <p>Your performance in studies is less than 50. You should focus on improving your understanding of the subjects and allocating more time to studying. Consider seeking help from teachers or tutors to clarify concepts you find difficult.</p>
+        {% elif best_prediction >= 50 and best_prediction < 60 %}
+            <p>Your performance in studies is between 50 and 59. While you're making progress, there's still room for improvement. Try to identify areas where you can strengthen your understanding and focus on those subjects.</p>
+        {% elif best_prediction >= 60 and best_prediction < 70 %}
+            <p>Your performance in studies is between 60 and 69. You're doing fairly well, but there's always room for improvement. Keep up the good work and consider challenging yourself with more advanced topics.</p>
+        {% elif best_prediction >= 70 and best_prediction < 80 %}
+            <p>Your performance in studies is between 70 and 79. You're performing very well and are on the right track. Continue to stay focused and aim for even higher achievements.</p>
+        {% else %}
+            <p>Congratulations! Your performance in studies is 80 or above. You're excelling academically and should continue to challenge yourself with advanced coursework.</p>
+        {% endif %}
+        {% if best_prediction < 60 %}
+            <p><strong>Areas for Improvement:</strong></p>
+            <ul>
+                <!-- Add specific areas of weakness based on the dataset or domain knowledge -->
+                <li>Hours Studied</li>
+                <li>Sample Question Papers Practiced</li>
+            </ul>
+            <p><strong>Resources to Improve:</strong></p>
+            <ul>
+                <li><a href="https://calnewport.com/blog/">Cal Newport's Study Hacks</a></li>
+                <li><a href="https://campusgrotto.com/">Campus Grotto</a></li>
+                <li><a href="https://collegecures.com/">College Cures</a></li>
+                <li><a href="https://blog.internationalstudent.com/">International Student Blog</a></li>
+                <li><a href="https://collegeinfogeek.com/">College Info Geek</a></li>
+            </ul>
+        {% endif %}
+        
+    </div>
+</body>
+</html>
