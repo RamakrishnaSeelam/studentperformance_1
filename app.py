@@ -82,4 +82,4 @@ def predict():
     return render_template('result.html', predictions=predictions_new_student, best_model=best_model_name, best_prediction=best_prediction)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host=="0.0.0.0")
