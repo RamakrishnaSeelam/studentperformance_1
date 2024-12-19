@@ -1,1 +1,1 @@
-## student performance predection using ml models
+## Student Performance Predection Using ML Models
